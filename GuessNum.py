@@ -38,6 +38,3 @@ def guess_num(t: int, mn: int, mx: int, sp: int):
         if k == 0:
             k += 1
         return [rr, k]
-
-
-print(guess_num(4, 2, 6, 1))
