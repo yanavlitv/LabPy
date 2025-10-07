@@ -1,4 +1,4 @@
-def build(pos, left, right, value, tree, current_height, max_hight, root):
+def build(pos, left, right, value, tree, current_height, max_hight):
     """
        Рекурсивно строит бинарное дерево.
 
@@ -10,22 +10,21 @@ def build(pos, left, right, value, tree, current_height, max_hight, root):
            tree: Массив для хранения дерева
            current_height: Текущая высота
            max_height: Максимальная высота дерева
-           root: Корневое значение
     """
     if right - left == 1:
         tree[pos] = value
         return
     else:
-        tree[pos] = root
+        tree[pos] = value
     middle = (right + left) // 2
-    build(2*pos + 1, left, middle, root*3+1, tree, current_height+1, max_hight, root*3+1)
-    build(2*pos + 2, middle + 1, right, root*3-1, tree, current_height+1, max_hight, root*3-1)
+    build(2*pos + 1, left, middle, value*3+1, tree, current_height+1, max_hight)
+    build(2*pos + 2, middle + 1, right, value*3-1, tree, current_height+1, max_hight)
     return
 
 
 def gen_bin_tree(height = 5, root = 10):
     """
-        Запускает функцию build на заданных параметрах height и root.
+        Запускает функцию build на заданных параметрах.
 
         Аргументы:
             height: Заданная высота
@@ -34,13 +33,8 @@ def gen_bin_tree(height = 5, root = 10):
             Массив, представляющий бинарное дерево
     """
     t = [0] * (2**height - 1)
-    build(0, 0, 2**height - 1, 0,  t, 1, height, root)
+    build(0, 0, 2**height - 1, root,  t, 1, height)
     return t
-
-
-
-
-
 
 
 
