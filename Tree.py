@@ -24,10 +24,20 @@ def build(pos, left, right, value, tree, current_height, max_hight, root):
 
 
 def gen_bin_tree(height = 5, root = 10):
+    """
+        Запускает функцию build на заданных параметрах.
+
+        Аргументы:
+            height: Заданная высота
+            root: Заданное значение корня
+        Возвращает:
+            Массив, представляющий бинарное дерево
+    """
     t = [0] * (2**height - 1)
     build(0, 0, 2**height - 1, 0,  t, 1, height, root)
     return t
 
+print(gen_bin_tree(5, 10))
 
 
 
