@@ -25,7 +25,7 @@ def build(pos, left, right, value, tree, current_height, max_hight, root):
 
 def gen_bin_tree(height = 5, root = 10):
     """
-        Запускает функцию build на заданных параметрах.
+        Запускает функцию build на заданных параметрах height и root.
 
         Аргументы:
             height: Заданная высота
@@ -38,6 +38,7 @@ def gen_bin_tree(height = 5, root = 10):
     return t
 
 print(gen_bin_tree(5, 10))
+
 
 
 
