@@ -28,13 +28,11 @@ def gen_bin_tree(hight, root, left_child = lambda x: x * 3 + 1, right_child = la
 def print_tree(tree):
     """Красиво выводит дерево по уровн"""
     if tree is None:
-        print(t)
+        print(tree)
     else:
         i = 1
-        while 2**(i-1) - 1 < len(t):
+        while 2**(i-1) - 1 < len(tree):
             print(i, ":", tree[2**(i-1) - 1: 2**i - 1])
             i+=1
 
-
-t = gen_bin_tree(5, 10, lambda x: x * 3 + 1, lambda x: x * 3 - 1)
-print_tree(t)
+print_tree(gen_bin_tree(5, 10, lambda x: x * 3 + 1, lambda x: x * 3 - 1))
